@@ -19,7 +19,7 @@ const Tetris = () => {
   const [gameOver, setGameOver] = useState(false);
 
   const [player, updatePlayerPos, resetPlayer] = usePlayer();
-  const [stage, setStage] = useStage(player);
+  const [stage, setStage] = useStage(player, resetPlayer);
 
   console.log('re-render');
 
@@ -46,7 +46,7 @@ const Tetris = () => {
         setGameOver(true);
         setDropTime(null);
       }
-      updatePlayerPos({ x: 0, y: 0, collided: true })
+      updatePlayerPos({ x: 0, y: 0, collided: true });
     }
   }
 
